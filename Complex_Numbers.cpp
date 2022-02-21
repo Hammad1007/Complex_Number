@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Windows.h>
 #include <cstring>
 #include <string>
 #include <cmath>
@@ -7,7 +6,7 @@
 using namespace std;
 
 class Complex {
-private:
+private:  // private data members 
 	int real;
 	int com;
 public:
@@ -22,18 +21,18 @@ public:
 		this->com = com;
 	}
 
-	Complex(Complex &C) {
+	Complex(Complex& C) {
 		real = C.real;
 		com = C.com;
 	}
 
-	friend ostream & operator<<(ostream &out, const Complex &cn) {
-		out << "Real part is: " << real << endl;
-		out << "Imaginary part is: " << com << endl;
+	friend ostream& operator<<(ostream& out, const Complex& cn) {
+		out << "Real part is: " << cn.real << endl;
+		out << "Imaginary part is: " << cn.com << endl;
 		return out;
 	}
 
-	friend istream &operator>>(istream &in, Complex &cn) {
+	friend istream& operator>>(istream& in, Complex& cn) {
 		cout << "Enter the real part: ";
 		in >> cn.real;
 		cout << "Enter the imaginary part: ";
@@ -49,13 +48,11 @@ public:
 	}
 
 	void output() {
-		// char ch = '+';
-		// char ch1 = '-';
 		cout << "The number is: ";
-		if(com < 0) {
+		if (com < 0) {
 			cout << real << " + " << "(" << com << ")" << "i" << endl;
 		}
-		else if(com == 0) {
+		else if (com == 0) {
 			cout << real << endl;
 		}
 		else {
@@ -63,6 +60,7 @@ public:
 		}
 	}
 
+	// getters and setters
 	void setreal(int real) {
 		this->real = real;
 	}
@@ -79,23 +77,25 @@ public:
 		return com;
 	}
 
-	Complex & operator++() {
+	// Increment operator
+	Complex& operator++() {
 		Complex temp;
 		temp.real = real++;
 		temp.com = com++;
 		return temp;
 	}
 
-	void add(Complex & C) {
+	// Addition function
+	void add(Complex& C) {
 		int temp_real;
 		int temp_com;
 		temp_real = real + C.getreal();
 		temp_com = com + C.getcom();
 		cout << "Sum is: ";
-		if(temp_com < 0) {
+		if (temp_com < 0) {
 			cout << temp_real << " + " << "(" << temp_com << ")" << "i" << endl;
 		}
-		else if(temp_com == 0) {
+		else if (temp_com == 0) {
 			cout << temp_real << endl;
 		}
 		else {
@@ -103,16 +103,17 @@ public:
 		}
 	}
 
-	void subtract(Complex & C) {
+	// Subtraction function
+	void subtract(Complex& C) {
 		int temp_real;
 		int temp_com;
 		temp_real = real - C.getreal();
 		temp_com = com - C.getcom();
 		cout << "Difference is: ";
-		if(temp_com < 0) {
+		if (temp_com < 0) {
 			cout << temp_real << " + " << "(" << temp_com << ")" << "i" << endl;
 		}
-		else if(temp_com == 0) {
+		else if (temp_com == 0) {
 			cout << temp_real << endl;
 		}
 		else {
@@ -121,16 +122,16 @@ public:
 
 	}
 
-	void multiply(Complex & C) {
+	void multiply(Complex& C) {
 		int temp_real;
 		int temp_com;
 		temp_real = real * C.getreal();
 		temp_com = com * C.getcom();
 		cout << "Product is: ";
-		if(temp_com < 0) {
+		if (temp_com < 0) {
 			cout << temp_real << " + " << "(" << temp_com << ")" << "i" << endl;
 		}
-		else if(temp_com == 0) {
+		else if (temp_com == 0) {
 			cout << temp_real << endl;
 		}
 		else {
@@ -138,16 +139,16 @@ public:
 		}
 	}
 
-	void divide(Complex & C) {
+	void divide(Complex& C) {
 		int temp_real;
 		int temp_com;
 		temp_real = real / C.getreal();
 		temp_com = com / C.getcom();
 		cout << "Divided answer is: ";
-		if(temp_com < 0) {
+		if (temp_com < 0) {
 			cout << temp_real << " + " << "(" << temp_com << ")" << "i" << endl;
 		}
-		else if(temp_com == 0) {
+		else if (temp_com == 0) {
 			cout << temp_real << endl;
 		}
 		else {
@@ -155,28 +156,24 @@ public:
 		}
 	}
 
-	bool operator equal(const Complex & C) {
+	bool operator ==(const Complex& C) {
 		bool flag;
-		if(real == C.real && com == C.com) {
+		if (real == C.real && com == C.com) {
 			flag = true;
-			cout << "Equal numbers." << endl;
 		}
 		else {
 			flag = false;
-			cout << "Not equal." << endl;
 		}
 		return flag;
 	}
 
-	bool operator !=(const Complex &cn) {
+	bool operator !=(const Complex& cn) {
 		bool flag;
-		if(real == cn.real || com == cn.com) {
+		if (real != cn.real || com != cn.com) {
 			flag = true;
-			cout << "They are not equal.";
 		}
 		else {
 			flag = false;
-			cout << "They are equal.";
 		}
 		return flag;
 	}
@@ -187,11 +184,11 @@ public:
 		com = 0;
 	}
 
-};
+}; // end of class Complex
 
-
+// Main starts here
 int main() {
-	system("Color 44");
+	system("Color B0");
 	cout << "*****************************************************************" << endl;
 	cout << "\t\t\tREAL AND COMPLEX NUMBERS C++ PROGRAMME" << endl;
 	Complex C1;
@@ -215,12 +212,23 @@ int main() {
 	cout << "-----------------------------------------------------------------" << endl;
 	C2.divide(C3);
 	cout << "-----------------------------------------------------------------" << endl;
-	C2.equal(C1);
+	if (C2 == C1) {
+		cout << "Equal.\n";
+	}
+	else {
+		cout << "Not equal.\n";
+	}
+	cout << "-----------------------------------------------------------------" << endl;
+	if (C3 != C1) {
+		cout << "Not equal.\n";
+	}
+	else {
+		cout << "Equal.\n";
+	}
 	cout << "-----------------------------------------------------------------" << endl;
 	cout << "\n";
 	cout << "\t\t\tMain Ends Here." << endl;
 	cout << "*****************************************************************" << endl;
-	Sleep(100);
 	system("Pause");
 	return 0;
 }
