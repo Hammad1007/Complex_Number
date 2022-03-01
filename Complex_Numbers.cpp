@@ -3,13 +3,14 @@
 #include <string>
 #include <cmath>
 #include <stdlib.h>
+#include <fstream>  // for file handling
 using namespace std;
 
 class Complex {
 private:  // private data members 
 	int real;
 	int com;
-public:
+public: // functions are kept public in order to access them in the main function
 	Complex() {
 		cout << "Constructor() called.\n";
 		real = 0;
