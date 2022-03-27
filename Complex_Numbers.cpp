@@ -1,16 +1,18 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-#include <cmath>
+#include <cmath>	// for handling inbuilt math functions
 #include <stdlib.h>
 #include <fstream>  // for file handling
 using namespace std;
 
 class Complex {
-private:  // private data members 
+private:  
+	// private data members 
 	int real;
 	int com;
-public: // functions are kept public in order to access them in the main function
+public: 
+	// functions are kept public in order to access them in the main function
 	Complex() {
 		cout << "Constructor() called.\n";
 		real = 0;
