@@ -13,6 +13,7 @@ private:
 	int com;
 public: 
 	// functions are kept public in order to access them in the main function
+	// Default Constructor
 	Complex() {
 		cout << "Constructor() called.\n";
 		real = 0;
@@ -38,6 +39,7 @@ public:
 		return out;
 	}
 
+	// Istream operator
 	friend istream& operator>>(istream& in, Complex& cn) {
 		cout << "Enter the real part: ";
 		in >> cn.real;
@@ -46,6 +48,7 @@ public:
 		return in;
 	}
 
+	// Input take
 	void input() {
 		cout << "Enter the real number: ";
 		cin >> real;
@@ -53,6 +56,7 @@ public:
 		cin >> com;
 	}
 
+	// Displaying the output
 	void output() {
 		cout << "The number is: ";
 		if (com < 0) {
