@@ -3,7 +3,7 @@
 #include <string>
 #include <cmath>	// for handling inbuilt math functions
 #include <stdlib.h>
-#include <fstream>  // for file handling
+#include <fstream> 	// for file handling
 using namespace std;
 
 class Complex {
@@ -19,16 +19,19 @@ public:
 		com = 0;
 	}
 
+	// Parameterised Constructor
 	Complex(int real, int com) {
 		this->real = real;
 		this->com = com;
 	}
 
+	// Copy Constructor
 	Complex(Complex& C) {
 		real = C.real;
 		com = C.com;
 	}
 
+	// Ostream operator
 	friend ostream& operator<<(ostream& out, const Complex& cn) {
 		out << "Real part is: " << cn.real << endl;
 		out << "Imaginary part is: " << cn.com << endl;
