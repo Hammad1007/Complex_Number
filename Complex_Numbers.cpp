@@ -6,6 +6,7 @@
 #include <fstream> 	// for file handling
 using namespace std;
 
+// class starts here
 class Complex {
 private:  
 	// private data members 
@@ -70,7 +71,7 @@ public:
 		}
 	}
 
-	// getters and setters
+	// Setters
 	void setreal(int real) {
 		this->real = real;
 	}
@@ -79,6 +80,7 @@ public:
 		this->com = com;
 	}
 
+	// Getter functions
 	int getreal() {
 		return real;
 	}
