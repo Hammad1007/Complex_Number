@@ -3,7 +3,6 @@
 #include <string>
 #include <cmath>	// for handling inbuilt math functions
 #include <stdlib.h>
-#include <fstream> 	// for file handling
 using namespace std;
 
 // class starts here
@@ -16,7 +15,7 @@ public:
 	// functions are kept public in order to access them in the main function
 	// Default Constructor
 	Complex() {
-		cout << "Constructor() called.\n";
+		cout << "Complex() called.\n";
 		real = 0;
 		com = 0;
 	}
@@ -134,6 +133,7 @@ public:
 
 	}
 
+	// Multiply function
 	void multiply(Complex& C) {
 		int temp_real;
 		int temp_com;
@@ -151,6 +151,7 @@ public:
 		}
 	}
 
+	// Divide function
 	void divide(Complex& C) {
 		int temp_real;
 		int temp_com;
@@ -168,6 +169,7 @@ public:
 		}
 	}
 
+	// == operator
 	bool operator ==(const Complex& C) {
 		bool flag;
 		if (real == C.real && com == C.com) {
@@ -179,6 +181,7 @@ public:
 		return flag;
 	}
 
+	// != operator
 	bool operator !=(const Complex& cn) {
 		bool flag;
 		if (real != cn.real || com != cn.com) {
@@ -190,8 +193,9 @@ public:
 		return flag;
 	}
 
+	// Destructor
 	~Complex() {
-		cout << "Destructor called().\n";
+		cout << "~Complex() called.\n";
 		real = 0;
 		com = 0;
 	}
