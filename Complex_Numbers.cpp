@@ -1,4 +1,4 @@
-#include <iostream>	// cin cout
+#include <iostream>	
 #include <cstring>
 #include <string>
 #include <cmath>	// for handling inbuilt math functions
