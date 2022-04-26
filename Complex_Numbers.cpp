@@ -16,7 +16,8 @@ public:
 	// Default Constructor
 	Complex() {
 		cout << "Complex() called.\n";
-		real = 0, com = 0;
+		real = 0;
+		com = 0;
 	}
 
 	// Parameterised Constructor
