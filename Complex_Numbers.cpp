@@ -227,6 +227,8 @@ int main() {
 	cout << "-----------------------------------------------------------------" << endl;
 	C2.divide(C3);
 	cout << "-----------------------------------------------------------------" << endl;
+	
+	// Checks if the two numbers are equal or not
 	if (C2 == C1) {
 		cout << "Equal.\n";
 	}
@@ -234,6 +236,8 @@ int main() {
 		cout << "Not equal.\n";
 	}
 	cout << "-----------------------------------------------------------------" << endl;
+	
+	// Chrcks if the numbers are unequal or not
 	if (C3 != C1) {
 		cout << "Not equal.\n";
 	}
