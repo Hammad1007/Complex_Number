@@ -15,7 +15,7 @@ public:
 	// functions are kept public in order to access them in the main function
 	// Default Constructor
 	Complex() {
-		cout << "Complex() called.\n";
+		//cout << "Complex() called.\n";
 		real = 0;
 		com = 0;
 	}
