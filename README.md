@@ -1,6 +1,7 @@
 # Complex_Number
 
 **Complex Number**
+It is any number which has a real part as well as an imaginary part.
 
 The programme uses the concepts of basic OOP to design a basic complex number class for the beginners.
 
